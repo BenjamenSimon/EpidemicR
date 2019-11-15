@@ -17,7 +17,7 @@ chris_log_likelihood(t_inf, t_rem, B)
 Returns the value of the log likelihood, up to a constant of proportionality.
 }
 \description{
-This function is used tp calculate the likelihood of a General Stochastic Epidemic, and brings together all the previously 
+This function is used tp calculate the likelihood of a General Stochastic Epidemic, and brings together all the previously
  specified functions; prod_part, interval_intersect, and integral_part.
 }
 \examples{

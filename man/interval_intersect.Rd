@@ -7,19 +7,19 @@
 interval_intersect(inf_times, rem_times, infected_inds)
 }
 \arguments{
-\item{interval_i}{Is the matrix cbind(t_inf, t_rem)[infected, ]. This is a 2 column matrix of the infection ]
-and removal times for the infected individuals.}
+\item{inf_times}{A vector of the infection times of all individuals (Inf if not infected).}
 
-\item{interval_j}{Is the matrix cbind(0, t_inf). This is a 2 column matrix of 0s in the first column and
-the infection times in the second.}
+\item{rem_times}{A vector of the removal times of all infected individuals.}
+
+\item{infected_inds}{A vector of the infected individuals.}
 }
 \value{
 Returns a matrix where each column is a vector for each j.
 }
 \description{
 This function is used in the calculation of the likelihood for a General Stochastic Epidemic, and calculates the interval
- intersect used in the calculation of the intergral for the infection likelihood. 
- This is the interval \eqn{[ (R_i ^ I_j) - (I_i) ^ (I_j) ]} for all i and j.
+ intersect used in the calculation of the intergral for the infection likelihood.
+ This is the interval \eqn{[ min(R_i, I_j) - min(I_i, I_j) ]} for i in infecteds, j in all.
 }
 \examples{
 This function is utilised by the log_likelihood function.
