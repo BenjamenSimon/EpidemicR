@@ -16,13 +16,21 @@
 #' @examples
 #' This function is utilised by the log_likelihood function.
 
-# == Components ==
-# i_infected = vector of individuals which are infected
-# E = matrix where e_ij is defined as in the interval intersect function.
-# sum(integral) calculates the double sum but in matrix notation
-
 integral_part = function(inf_times, rem_times, B, infected_inds){
+
+  # A matrix (calculated using the interval intersect function)
+  # which denotes the amount of time that individual j (column)
+  # spent in infected indivudual i's (row) infectious period.
   E = interval_intersect(inf_times, rem_times, infected_inds)
+
+  # Pointwise multiply the periods/intersects by the appropriate infection rate.
   integral = E * B[infected_inds,]
+
+  # Sum up the matrix, equivalent to taking the double sum in i (in infected), j (in all).
   sum(integral)
 }
+
+
+
+
+

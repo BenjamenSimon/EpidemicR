@@ -25,7 +25,7 @@
 chris_interval_intersect = function(interval_i, interval_j){
 
   # Calculates the minimum of infection time I_j of j and the infection time I_i of
-  # infected individual i.
+  # infected individual i, i in infecteds, j in all.
   # This is min(I_j, I_i).
   int_start <- sapply(interval_j[,1], function(x) pmin(x, interval_i[,1]))
 
