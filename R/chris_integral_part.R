@@ -13,21 +13,21 @@
 #' @return Returns the value of the integral detailed above.
 #'
 #' @examples
-#' This function is utilised by the log_likelihood function.
+#' This function is utilised by the simple_log_likelihood function.
 
 chris_integral_part = function(t_inf_j, events, B){
-  
+
   # The indexes of those who were infected.
   i_infected = events[,1] < Inf
-  
+
   # A matrix (calculated using the interval intersect function)
   # which denotes the amount of time that individual j (column)
   # spent in infected indivudual i's (row) infectious period.
   E = chris_interval_intersect(events[i_infected,], events)
-  
+
   # Pointwise multiply the periods/intersects by the appropriate infection rate.
   integral = E * B[i_infected,]
-  
+
   # Sum up the matrix, equivalent to taking the double sum in i (in infected), j (in all).
   sum(integral)
 }

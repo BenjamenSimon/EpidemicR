@@ -21,7 +21,7 @@ This function is used in the calculation of the likelihood for a General Stochas
  of the infection likelihood, using the alternative double-sum parameterisation.
 }
 \examples{
-This function is utilised by the log_likelihood function.
+This function is utilised by the simple_log_likelihood function.
 }
 \keyword{GSE}
 \keyword{Integral}
