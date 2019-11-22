@@ -17,7 +17,7 @@ simple_prod_part(inf.times, rem.times, beta.mat)
 Returns the value of the product detailed above.
 }
 \description{
-This function is used in the calculation of the likelihood for a General Stochastic Epidemic, and calculates 
+This function is used in the calculation of the likelihood for a General Stochastic Epidemic, and calculates
  \eqn{\prod_{j != kappa}^{n_I} [ \sum_{ i in I_{n_{j-}} } [ beta_{i,j} ] ]}.
 }
 \examples{
