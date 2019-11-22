@@ -25,12 +25,12 @@ interval_intersect = function(inf_times, rem_times, infected_inds){
   # Calculates the minimum of infection time I_j of j and the infection time I_i of
   # infected individual i, i in infecteds, j in all.
   # This is min(I_j, I_i).
-  int_start <- sapply(inf_times, function(x) pmin(x, inf_times[infected_inds, ]))
+  int_start <- sapply(inf_times, function(x) pmin(x, inf_times[infected_inds]))
 
   # Calculates the minimum of infection time I_j of individual j and the
   # removal time R_i of infected individual i, for i in infecteds, j in all.
   # This is min(I_j, R_i).
-  int_end <- sapply(inf_times, function(x) pmin(x, rem_times[infected_inds, ]))
+  int_end <- sapply(inf_times, function(x) pmin(x, rem_times[infected_inds]))
 
   # Returns a matrix where each column is a vector for each j
   int_end - int_start
